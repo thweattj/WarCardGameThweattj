@@ -5,9 +5,10 @@ import java.util.ArrayList;
 
 public class WarCardPlayer extends CardPlayer
 {
-   public ArrayList<Card> pile;
-   public int curCardRank;
-   public int curCardSuit;
+   public ArrayList<Card> pile;  //array of cards won
+   public Card card;             //current card (last played card)
+   public int curCardRank;       //current card rank
+   public int curCardSuit;       //current card suit
    
    /*
       Constructor
@@ -26,7 +27,7 @@ public class WarCardPlayer extends CardPlayer
    */
    public Card play()
    {
-      Card card = super.play();
+      card = super.play();
       curCardRank = card.getRank();
       curCardSuit = card.getSuit();
       return card;
@@ -49,4 +50,5 @@ public class WarCardPlayer extends CardPlayer
       else
          return false;
    }
+   
 }

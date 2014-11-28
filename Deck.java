@@ -1,15 +1,18 @@
+//Jake Thweatt
+//CS110
+
 /**
- * Representation of a Deck of cards.  
- * Initialized to a standard 52 card deck. 
- *
- * @author Jackie Horton
+  Program simulates a deck of cards, creating 
+  a standard 52 card deck. 
+ 
  */
 
 import java.util.Random;
 public class Deck 
 {
    /** 
-   *  Number of cards in standard deck {@value #CARDS_IN_DECK}
+     Number of cards in standard deck 
+     @value #CARDS_IN_DECK
    **/
    public final static int CARDS_IN_DECK = 52;
 
@@ -19,16 +22,14 @@ public class Deck
    private int ct;
    
    /**
-    * Constructs a regular 52-card deck.  Initially, the cards
-    * are in a sorted order.  The shuffle() method can be called to
-    * randomize the order.  
+       Constructs a regular 52-card deck in an initially ordered order.  
     */
    public Deck()
    {
       newDeck();
    }
    /**
-    * Create a new collection of 52 cards, in sorted order
+      Create a new collection of 52 cards, in sorted order
     */
    public void newDeck()
    {
@@ -38,7 +39,7 @@ public class Deck
          for (int s=Card.SPADES;s<=Card.CLUBS;s++)
          {
             deck[ct]=new Card(r,s);
-            ct = ct + 1;
+            ct ++;
          }
       }
    }
@@ -55,7 +56,7 @@ public class Deck
          for (int s=Card.SPADES;s<=Card.CLUBS;s++)
          {
             deck[ct]=new Card(r,s);
-            ct = ct + 1;
+            ct++;
          }
       }
    }

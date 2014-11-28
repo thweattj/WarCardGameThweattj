@@ -1,53 +1,123 @@
 //Jake Thweatt
 //CS 110
-// Game of War
-/*
-   Program simulates the game War using the Deck and Card class
-*/
+//Program similates the card game War between 2 players
 
-import java.util.Scanner;
 
-public class WarGame 
+public class WarGame
 {
-public static void main(String[] args) {
+   private Card card1, card2, card12, card22, downCard1, downCard2;
+   private WarCardPlayer player1, player2;
+   
+   public WarGame(WarCardPlayer play1, WarCardPlayer play2)
+   {
+      player1 = play1;
+      player2 = play2;
+      card1 = player1.play();
+      card2 = player2.play();
+      this.winner();
+   }
+   
+   public void play()
+   {
+      player1.play();
+      player2.play();
+      this.winner();
+   }
+   
+   public Card getPlayer1Card()
+   {
+      
+      return card1;
+   }
+   
+   public Card getPlayer2Card()
+   {
+      
+      return card2;
+   }
+   
+   public int war()
+   {
+      downCard1 = player1.play();
+      card12 = player1.play();
+      downCard2 = player2.play();
+      card22 = player2.play();
+      int winner = this.determineWarWinner();
+      
+      if (winner == 1)
+         return 1;
+      else
+         return -1;
+   }
 
-    Card[][] hands = new Card[2][1];
-    Deck myDeck = new Deck();
+   public int winner()
+   {
+      
+      if (player1.curCardRank > player2.curCardRank)
+      {
+         player1.pile.add(card1);
+         player1.pile.add(card2);
+         return 1;
+      }
+      else if (player1.curCardRank < player2.curCardRank)
+      {
+         player2.pile.add(card1);
+         player2.pile.add(card2);
+         return -1;
+      }
+      else
+      {
+         return this.war();
+      }
+      
+   }
+   
+   private int determineWarWinner()
+   {
+      if (player1.curCardRank > player2.curCardRank)
+      {
+         player1.pile.add(card1);
+         player1.pile.add(card2);
+         player1.pile.add(downCard1);
+         player1.pile.add(downCard2);
+         player1.pile.add(card12);
+         player1.pile.add(card22);
+         return 1;
+      }
+      else
+      {
+         player2.pile.add(card1);
+         player2.pile.add(card2);
+         player2.pile.add(downCard1);
+         player2.pile.add(downCard2);
+         player2.pile.add(card12);
+         player2.pile.add(card22);
+         return -1;
+      }
+   }
+   
+   public static void main(String []args)
+   {
+      WarCardPlayer player1 = new WarCardPlayer(1);
+      WarCardPlayer player2 = new WarCardPlayer(2);
+      WarGame WAR = new WarGame(player1, player2);
+      
+      System.out.println(player1.curCardRank);
+      System.out.println(player2.curCardRank);
+      System.out.println(player1.getPileSize());
+      System.out.println(player2.getPileSize() + "\n");
+      
+      while (player1.curCardRank != player2.curCardRank)
+      {
+         WAR.play();
+         
+         System.out.println(player1.curCardRank);
+         System.out.println(player2.curCardRank);
+         System.out.println(player1.getPileSize());
+         System.out.println(player2.getPileSize() + "\n");
+      }
 
-    //reduced this to 26 iterations because two cards are dealt each iteration
-    for (int i = 0; i < 26; i++) {
-        System.out.printf("\n Round %s of The War \n", i);
-
-        
-        for (int player = 0; player < hands.length; player++)
-        {
-           hands[player][0] = myDeck.dealCard();
-        }
-        
-        for (int player = 0; player < hands.length; player++) {
-            System.out.printf("Player %d: ", player+1);
-            printHand(hands[player]);
-        }
-
-        int player1 = hands[0][0].getValue(); //get the value from the Card object for each player
-        int player2 = hands[1][0].getValue();
-
-        if (player1 > player2)
-            System.out.println("Player One Wins The War");
-        else if (player2 > player1)
-            System.out.println("Player Two Wins The War");
-        else
-            System.out.println("The War Is A Tie");
-
-    }
+   }
 }
-
-    public static void printHand(Card[] hand) {
-
-        for (int card = 0; card < hand.length; card++)
-            System.out.printf("%s", hand[card].toString());
-
-        System.out.println();
-
-    } 
-}
+   
+   

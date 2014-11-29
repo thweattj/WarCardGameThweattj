@@ -1,4 +1,10 @@
+// Jake Thweatt
+//CS 110
 
+/*
+   CardImage class takes a Card Object and determines the
+   image to be used by WarGui.java
+*/
 public class CardImage
 {
    private String RANK;

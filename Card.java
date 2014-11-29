@@ -1,7 +1,11 @@
-/**
- * An object of type Card represents a playing card. The card has a suit, which
- * can be spades, hearts, diamonds, clubs. 
- */
+//Jake Thweat
+//CS 11
+
+/*
+  Program creates an array of cards to represent a deck. An object of type Card 
+  represents a playing card. The card has a suit, which can be spades, hearts, 
+  diamonds, or clubs. 
+*/
 public class Card
 {
    
@@ -15,27 +19,23 @@ public class Card
    public final static int QUEEN = 12;   
    public final static int KING = 13;
    
-   /**
-    * This card's suit, one of the constants SPADES, HEARTS, DIAMONDS,
-    * CLUBS.
-    */
+   /*
+     This card's suit, one of the constants SPADES, HEARTS, DIAMONDS,
+     CLUBS.
+   */
    private final int SUIT; 
    
-   /**
-    * The card's rank.
-    */
+   /*
+     The card's rank.
+   */
    private final int RANK;
    
-   
-   /**
-    * Creates a card with a specified suit and rank.
-    * @param rank the rank of the new card.  For a regular card,
-    * the value must be in the range 1 through 13, with 1 representing an Ace.
-    * You can use the constants Card.ACE, Card.JACK, Card.QUEEN, and Card.KING.  
-    * @param suit the suit of the new card.  This must be one of the values
-    * Card.SPADES, Card.HEARTS, Card.DIAMONDS, Card.CLUBS.
-    * @throws IllegalArgumentException if the parameter values are not in appropriate range
-    */
+   /*
+      Creates a card with a specified suit and rank.
+      @param rank the rank of the new card.  
+      @param suit the suit of the new card.
+      @throws IllegalArgumentException if the parameter values are not in appropriate range
+   */
    public Card(int rank, int suit) {
       if (suit != SPADES && suit != HEARTS && suit != DIAMONDS && 
             suit != CLUBS)
@@ -44,26 +44,26 @@ public class Card
       SUIT = suit;
    }
 
-   /**
-    * Returns the suit of this card.
-    * @returns the suit of the card.
-    */
+   /*
+     Returns the suit of the card.
+     @returns the suit of the card.
+   */
    public int getSuit() {
       return SUIT;
    }
    
-   /**
-    * Returns the rank of the card.
-    * @return the rank.
-    */
+   /*
+     Returns the rank of the card.
+     @return the rank.
+   */
    public int getRank() {
       return RANK;
    }
    
-   /**
-    * Returns a String representation of the card's suit.
-    * @return one of the strings "Spades", "Hearts", "Diamonds", "Clubs".
-    */
+   /*
+     Returns a String representation of the card's suit.
+     @return one of the strings "Spades", "Hearts", "Diamonds", "Clubs".
+   */
    public String suitToString() {
       switch(SUIT)
       {
@@ -80,10 +80,10 @@ public class Card
       }
    }
    
-   /**
-    * Returns a String representation of the card's rank.
-    * @return for a regular card, one of the strings "Ace", "2",
-    * "3", ..., "10", "Jack", "Queen", or "King".  
+   /*
+     Returns a String representation of the card's rank.
+     @return for a regular card, one of the strings "Ace", "2",
+     "3", ..., "10", "Jack", "Queen", or "King".  
   */
    public String rankToString() 
    {
@@ -105,10 +105,10 @@ public class Card
       }
    }
    
-   /**
-    * Returns a string representation of this card, including both
-    * its suit and its rank.
-    */
+   /*
+     Returns a string representation of this card, including both
+     its suit and its rank.
+   */
    public String toString()
    {
       return rankToString() + " of " + suitToString();

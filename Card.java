@@ -1,7 +1,7 @@
 //Jake Thweat
-//CS 11
+//CS 110
 
-/*
+/**
   Program creates an array of cards to represent a deck. An object of type Card 
   represents a playing card. The card has a suit, which can be spades, hearts, 
   diamonds, or clubs. 
@@ -19,18 +19,18 @@ public class Card
    public final static int QUEEN = 12;   
    public final static int KING = 13;
    
-   /*
+   /**
      This card's suit, one of the constants SPADES, HEARTS, DIAMONDS,
      CLUBS.
    */
    private final int SUIT; 
    
-   /*
+   /**
      The card's rank.
    */
    private final int RANK;
    
-   /*
+   /**
       Creates a card with a specified suit and rank.
       @param rank the rank of the new card.  
       @param suit the suit of the new card.
@@ -44,15 +44,15 @@ public class Card
       SUIT = suit;
    }
 
-   /*
+   /**
      Returns the suit of the card.
-     @returns the suit of the card.
+     @return the suit of the card.
    */
    public int getSuit() {
       return SUIT;
    }
    
-   /*
+   /**
      Returns the rank of the card.
      @return the rank.
    */
@@ -60,7 +60,7 @@ public class Card
       return RANK;
    }
    
-   /*
+   /**
      Returns a String representation of the card's suit.
      @return one of the strings "Spades", "Hearts", "Diamonds", "Clubs".
    */
@@ -80,7 +80,7 @@ public class Card
       }
    }
    
-   /*
+   /**
      Returns a String representation of the card's rank.
      @return for a regular card, one of the strings "Ace", "2",
      "3", ..., "10", "Jack", "Queen", or "King".  
@@ -105,9 +105,10 @@ public class Card
       }
    }
    
-   /*
+   /**
      Returns a string representation of this card, including both
      its suit and its rank.
+     @return The rank and suit of the card.
    */
    public String toString()
    {

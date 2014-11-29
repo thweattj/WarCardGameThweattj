@@ -1,7 +1,7 @@
 // Jake Thweatt
 //CS 110
 
-/*
+/**
    CardImage class takes a Card Object and determines the
    image to be used by WarGui.java
 */
@@ -12,7 +12,7 @@ public class CardImage
    public String imageName;
    
    
-   /*
+   /**
       Default Constructor take no parameters and defaults
       RANK to 1 and SUIT to "H" (Strings).
    */
@@ -22,10 +22,10 @@ public class CardImage
       SUIT = "H";
    }
    
-   /*
+   /**
       Alternate Constructor takes a Card object to determine the string
       value of the Card's rank and suit
-      @params card The Card object to determine the rank and suit of
+      @param card The Card object to determine the rank and suit of
    */
    public CardImage(Card card)
    {
@@ -34,17 +34,18 @@ public class CardImage
    }
    
    
-   /*
+   /**
       SetCard method sets a new card to determine rank
       and suit of for image.
-      @params card The Card object to determine image of.
+      @param card The Card object to determine image of.
    */
    public void setCard(Card card)
    {
       RANK = card.rankToString();
       SUIT = card.suitToString();
    }
-   /*
+   
+   /**
       getRankName method determines the first letter of the RANK
       string (used to determine image)
       @return String The letter of the rank
@@ -55,7 +56,7 @@ public class CardImage
       return firstR;
    }
    
-   /*
+   /**
       getSuitName method determines the first letter of the SUIT
       string (used to determine image)
       @return String The letter of the suit
@@ -66,7 +67,7 @@ public class CardImage
       return firstS;
    }
    
-   /*
+   /**
       determineImage method determines the image based on the 
       values from getSuitName and getRankName methods 
       @return String The name of the image file that will be used.

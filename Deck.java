@@ -1,30 +1,29 @@
 //Jake Thweatt
 //CS110
 
-/*
-  Program simulates a deck of cards, creating 
-  a 52 card deck for the War card game.
-*/
-
 import java.util.Random;
+
+/**
+  Program simulates a deck of cards, creating 
+  a 52 card deck for a card game.
+*/
 public class Deck 
 {
-   /* 
+   /** 
      Number of cards in standard deck 
-     @value #CARDS_IN_DECK
    */
    public final static int CARDS_IN_DECK = 52;
    private Card [] deck;
    private int count;
    
-   /*
+   /**
        Default Constructor a regular 52-card deck in an initially ordered order.  
    */
    public Deck()
    {
       newDeck();
    }
-   /*
+   /**
       Create a new collection of 52 cards, in sorted order
    */
    public void newDeck()
@@ -40,9 +39,9 @@ public class Deck
       }
    }
    
-   /*
+   /**
       Creates a new deck of specified size
-      @params cards The size of the new deck
+      @param cards The size of the new deck
    */
    public void newDeck(int cards)
    {
@@ -57,7 +56,7 @@ public class Deck
       }
    }
 
-   /* 
+   /** 
       Remove and return the top Card on the Deck
       @return A reference to a Card that was top on the Deck
    */
@@ -66,7 +65,7 @@ public class Deck
      count--;
       return deck[count];
    }
-   /* 
+   /** 
       Return current number of Cards in Deck
       @return number of Cards in Deck
    */
@@ -74,7 +73,7 @@ public class Deck
    {  
       return count;
    }
-   /* 
+   /** 
       Randomize the order of Cards in Deck
    */
    public void shuffle()
@@ -90,7 +89,7 @@ public class Deck
          deck[randNum]=temp;
       }
    }
-   /* 
+   /** 
       Determine if Deck is empty
       @return true if there are no more cards, false otherwise
    */

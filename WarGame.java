@@ -2,20 +2,20 @@
 //CS 110
 //Program similates the card game War between 2 players
 
-/*
+/**
    WarGame class used with WarGui for War card game with 
-   graphical interface
+   graphical interface.
 */
 public class WarGame
 {
    public Card card1, card2, card12, card22, downCard1, downCard2;
    private WarCardPlayer player1, player2;
    
-   /*
+   /**
       WarGame constructor uses WarCardPlayer Objects for determining
       card values and winnings
-      @params play1 Player one of the game (a WarCardPlayer Object)
-      @params play2 Player two of the game (a WarCardPlayer Object)
+      @param play1 Player one of the game (a WarCardPlayer Object)
+      @param play2 Player two of the game (a WarCardPlayer Object)
    */
    public WarGame(WarCardPlayer play1, WarCardPlayer play2)
    {
@@ -24,7 +24,7 @@ public class WarGame
       this.play();
    }
    
-   /*
+   /**
       play method plays a card from each player's hand
    */
    public void play()
@@ -34,7 +34,7 @@ public class WarGame
       this.winner();
    }
    
-   /*
+   /**
       getPlayer1Card gets the last card that Player 1 played
       @return The Card Object last played by Player 1
    */
@@ -43,7 +43,7 @@ public class WarGame
       return card1;
    }
 
-   /*
+   /**
       getPlayer2Card gets the last card that Player 2 played
       @return The Card Object last played by Player 1
    */
@@ -52,7 +52,7 @@ public class WarGame
       return card2;
    }
    
-   /*
+   /**
       winner method determines the winner of a hand
       based on last card played
       @return 1 if player 1 wins, -1 if player 2 wins.
@@ -77,7 +77,7 @@ public class WarGame
       }
    }
    
-   /*
+   /**
       war method simulates the actions taken when a war
       occurs (the extra cards played). Then the winner
       is determined
@@ -97,7 +97,7 @@ public class WarGame
          return -1;
    }
    
-   /*
+   /**
       determineWarWinner method determines the winner 
       of a war.
       @return 1 is player 1 wins -1 is player 2 wins
@@ -126,7 +126,7 @@ public class WarGame
       }
    }
    
-   /*
+   /**
       isWar method determines if there is a war based
       on the last played card of player 1 and player 2
       @return boolean true if the result is a war.

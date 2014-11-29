@@ -1,6 +1,11 @@
 //Jake Thweatt
 //CS 110;
+
 import javax.swing.*;
+
+/**
+   WAR game and gui driver
+*/
 public class WarCardDriver
 {
    public static void main(String []args)

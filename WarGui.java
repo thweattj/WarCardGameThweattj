@@ -1,7 +1,7 @@
 //Jake Thweatt
 //CS 110
 
-/*
+/**
    Program simulates the card game WAR with GUI system set to display all appropriate
    cards based on: each player plays 1 card at a time, a WAR is determined by rank,
    and during a WAR each player plays 2 additional cards (1 face down, the other face up).
@@ -12,9 +12,11 @@ import java.awt.*;
 import java.awt.event.*;
 public class WarGui extends JFrame
 {
-
+   /**  The color of the playing field */
    private final Color DARKGREEN = new Color(18,100,5);  //create new color: Dark Green
+   /**  The game instance of WAR */
    private WarGame War;
+   /** game players */
    private WarCardPlayer player1, player2;
    private CardImage cardImage;
    private JPanel titlePanel, play1Panel, play2Panel, cardPanel, warPanel1, warPanel2;
@@ -22,7 +24,7 @@ public class WarGui extends JFrame
    private JLabel title, play1Title, play2Title, pileExitLabel, card1Image, card2Image,
            card12Image, card22Image, downCard1, downCard2, gameOver, winner;
 //-------------------------------------------------------------------------------------
-   /*
+   /**
      Graphical interface 
    */
    public WarGui()
@@ -127,7 +129,7 @@ public class WarGui extends JFrame
    }
 //----------------------------------------------------------------------------   
    
-   /*
+   /**
       ButtonListener for battleButton
       Every time the button is pressed, the cards are updated
       with each player's most current card with a label. If 
@@ -229,7 +231,7 @@ public class WarGui extends JFrame
    }
 //-------------------------------------------------------------------------------
    
-   /*
+   /**
       endAction button action that ends the program. This clears the center board
       and prints the players' score (pile size)
    */

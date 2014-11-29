@@ -3,16 +3,35 @@
 
 import java.util.ArrayList;
 
+/**
+   WarCardPlayer extends CardPlayer object to include a card pile,
+   current rank and current suit of card for a game of WAR.
+*/
 public class WarCardPlayer extends CardPlayer
 {
-   public ArrayList<Card> pile;  //array of cards won
-   public Card card;             //current card (last played card)
-   public int curCardRank;       //current card rank
-   public int curCardSuit;       //current card suit
+   /**
+      The card pile of won cards in WAR
+   */
+   public ArrayList<Card> pile;
    
-   /*
+   /**
+      The last played (most recent) card
+   */
+   public Card card;
+   
+   /**
+      The rank of the current card
+   */
+   public int curCardRank;
+   
+   /**
+      The suit of the current card
+   */
+   public int curCardSuit;
+   
+   /**
       Constructor
-      @params playerNum The number of the player
+      @param playerNum The number of the player
    */
    public WarCardPlayer(int playerNum)
    {
@@ -20,7 +39,7 @@ public class WarCardPlayer extends CardPlayer
       pile = new ArrayList<Card>();
    }
    
-   /*
+   /**
       play method plays the next card in the deck and sets the
       current card values (rank and suit) to that card.
       @return The card played
@@ -33,7 +52,7 @@ public class WarCardPlayer extends CardPlayer
       return card;
    }
 
-   /*
+   /**
       getPilseSize method returns the size of the player's pile
       @return The integer size of the player's pile.
    */
@@ -42,7 +61,10 @@ public class WarCardPlayer extends CardPlayer
       return pile.size();
    }
    
-   
+   /**
+      war method determines if there is a war or not
+      @return true if there is a war, false otherwise.
+   */
    public boolean war(WarCardPlayer other)
    {
       if (curCardRank==other.curCardRank)

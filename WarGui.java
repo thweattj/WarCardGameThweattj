@@ -12,11 +12,11 @@ import java.awt.*;
 import java.awt.event.*;
 public class WarGui extends JFrame
 {
-   /**  The color of the playing field */
+   /**  The color of the playing field (Dark Green)*/
    private final Color DARKGREEN = new Color(18,100,5);  //create new color: Dark Green
    /**  The game instance of WAR */
    private WarGame War;
-   /** game players */
+   /** Game players */
    private WarCardPlayer player1, player2;
    private CardImage cardImage;
    private JPanel titlePanel, play1Panel, play2Panel, cardPanel, warPanel1, warPanel2;
@@ -171,10 +171,10 @@ public class WarGui extends JFrame
                War.war();
                warPanel1.removeAll();
                battleButton = new JButton("WAR!");
-               warPanel1.add(downCard1);
                cardImage.setCard(War.card12);
                card12Image = new JLabel(new ImageIcon(cardImage.determineImage()));
                warPanel1.add(card12Image);
+               warPanel1.add(downCard1);
                
                warPanel2.removeAll();
                warPanel2.add(downCard2);
@@ -239,8 +239,6 @@ public class WarGui extends JFrame
    {
       public void actionPerformed(ActionEvent end)
       {
-         battleButton.setVisible(false);
-         endButton.setVisible(false);
          gameOver = new JLabel("GAME OVER", SwingConstants.CENTER);
          gameOver.setFont(new Font("ARIAL", Font.BOLD, 24));
          gameOver.setForeground(Color.RED);
@@ -274,7 +272,10 @@ public class WarGui extends JFrame
             winner.setForeground(Color.RED);
             cardPanel.add(winner);
          }
+         battleButton.setVisible(false);
+         endButton.setVisible(false);
          cardPanel.revalidate();
       }
+      
    }
 }

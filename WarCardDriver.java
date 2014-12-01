@@ -12,7 +12,7 @@ public class WarCardDriver
    {
       JFrame frame = new WarGui();
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setSize(1280,720);
+      frame.setSize(1366,720);
       frame.validate();
       frame.setVisible(true);
    }
